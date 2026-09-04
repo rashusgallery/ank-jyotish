@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1120">
+<meta name="description" content="मोबाइल नंबर न्यूमरोलॉजी विश्लेषक — 100% ऑफलाइन, इंस्टॉल करने योग्य ऐप">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="अंक-दूरदर्शी">
+<title>अंक-दूरदर्शी | मोबाइल नंबर न्यूमरोलॉजी</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="bgfx" aria-hidden="true"></div>
+<main>
+
+  <div class="topbar nopr">
+    <span><i class="pulse"></i>100% ऑफलाइन • कोई डेटा बाहर नहीं</span>
+    <span id="today"></span>
+  </div>
+
+  <header>
+    <div class="emblem" aria-hidden="true">
+      <i></i><i class="hi"></i><i></i><i></i><i class="hi"></i><i></i><i></i><i class="hi"></i><i></i>
+    </div>
+    <div>
+      <h1>अंक-<em>दूरदर्शी</em></h1>
+      <div class="sub">मोबाइल नंबर न्यूमरोलॉजी • 10-अंकीय पदानुक्रम • मित्र-शत्रु पेयर्स • Lo Shu ग्रिड</div>
+      <div class="chips">
+        <span class="pchip" id="drvChip"></span>
+        <span class="pchip" id="cndChip"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- profile -->
+  <section class="card nopr" id="profileCard">
+    <h2>👤 आपकी जानकारी</h2>
+    <div class="row">
+      <div style="flex:1.4">
+        <label class="lbl" for="dob">जन्मतिथि (वैकल्पिक — Lo Shu हेतु)</label>
+        <input type="date" id="dob" min="1900-01-01">
+      </div>
+      <div>
+        <label class="lbl" for="drv">मूलांक (Driver)</label>
+        <select id="drv"></select>
+      </div>
+      <div>
+        <label class="lbl" for="cnd">भाग्यांक (Conductor)</label>
+        <select id="cnd"></select>
+      </div>
+    </div>
+    <p class="hint">💡 DOB खाली रखने पर डिफ़ॉल्ट <b style="color:var(--gold2)">मूलांक 5 (बुध) व भाग्यांक 6 (शुक्र)</b> माने जाएँगे। DOB डालने पर अंक स्वतः गणना होंगे और Lo Shu की भरपाई भी जाँची जाएँगी।</p>
+  </section>
+
+  <!-- pad -->
+  <section class="card orn nopr" id="padCard">
+    <div class="ring" aria-hidden="true"></div>
+    <h2>📱 प्रस्तावित मोबाइल नंबर</h2>
+    <div class="slots" id="slots"></div>
+    <div class="meta"><span id="cnt">0 / 10 अंक</span><span>चालू योग: <b id="liveSum">—</b></span></div>
+    <div class="pad" id="pad"></div>
+    <div class="samples">उदाहरण आज़माएँ:
+      <button type="button" data-s="9876543210">9876543210</button>
+      <button type="button" data-s="5656565656">5656565656</button>
+    </div>
+    <button class="btnGo" id="btnGo" type="button" disabled>🔍 विश्लेषण करें (ANALYZE)</button>
+  </section>
+
+  <!-- report -->
+  <section id="report"></section>
+
+  <footer>
+    ⚠️ यह विश्लेषण अंकशास्त्रीय मान्यताओं पर आधारित है — केवल संदर्भ हेतु।<br>
+    अंक-दूरदर्शी v2.0 • बिना इंटरनेट काम करता है • आपका डेटा इसी डिवाइस पर रहता है
+  </footer>
+</main>
+<div id="toast"></div>
+<script src="js/app.js" defer></script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('sw.js').catch(function(e){console.warn('SW register failed',e)});
+  });
+}
+</script>
+</body>
+</html>

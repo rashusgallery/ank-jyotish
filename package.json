@@ -1,0 +1,12 @@
+{
+  "name": "ank-doordarshi",
+  "version": "2.0.0",
+  "description": "मोबाइल नंबर न्यूमरोलॉजी विश्लेषक — 100% ऑफलाइन, इंस्टॉल करने योग्य PWA",
+  "private": true,
+  "scripts": {
+    "start": "npx serve . -l 5173",
+    "dev": "npx live-server --port=5173 --no-browser"
+  },
+  "keywords": ["numerology", "mobile-number", "pwa", "offline", "hindi"],
+  "license": "UNLICENSED"
+}

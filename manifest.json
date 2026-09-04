@@ -1,0 +1,40 @@
+{
+  "name": "अंक-दूरदर्शी | मोबाइल नंबर न्यूमरोलॉजी",
+  "short_name": "अंक-दूरदर्शी",
+  "description": "मोबाइल नंबर न्यूमरोलॉजी विश्लेषक — 100% ऑफलाइन, इंस्टॉल करने योग्य ऐप",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a1120",
+  "theme_color": "#0a1120",
+  "lang": "hi",
+  "dir": "ltr",
+  "categories": ["lifestyle", "utilities"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
